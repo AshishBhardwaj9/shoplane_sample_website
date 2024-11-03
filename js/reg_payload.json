@@ -1,0 +1,434 @@
+{
+  "header": {
+    "schemaRef": {
+      "id": "https://ns.adobe.com/cognizanttechnologys/schemas/a79249fddd0d120a471ec0e95892b6487624b3074b3263c4",
+      "contentType": "application/vnd.adobe.xed-full+json;version=1.0"
+    },
+    "imsOrgId": "D1D7123F524450A60A490D45@AdobeOrg",
+    "datasetId": "66fdb11a250ffa2aefe3547f",
+    "source": {
+      "name": "Service Expt Profile DI"
+    }
+  },
+  "body": {
+    "xdmMeta": {
+      "schemaRef": {
+        "id": "https://ns.adobe.com/cognizanttechnologys/schemas/a79249fddd0d120a471ec0e95892b6487624b3074b3263c4",
+        "contentType": "application/vnd.adobe.xed-full+json;version=1.0"
+      }
+    },
+    "xdmEntity": {
+      "_cognizanttechnologys": {
+        "service_expt_identification": {
+          "crmId": "Sample value",
+          "ecid": "Sample value",
+          "emailId": "Sample value",
+          "emailIdSha256": "Sample value",
+          "loyaltyId": 10758,
+          "phone": "Sample value"
+        }
+      },
+      "_id": "/uri-reference",
+      "_repo": {
+        "createDate": "2004-10-23T12:00:00-06:00",
+        "modifyDate": "2004-10-23T12:00:00-06:00"
+      },
+      "consents": {
+        "collect": {
+          "val": "y"
+        },
+        "idSpecific": {
+          "key": {
+            "key": {
+              "adID": {
+                "idType": "IDFA",
+                "val": "y"
+              },
+              "collect": {
+                "val": "y"
+              },
+              "marketing": {
+                "email": {
+                  "reason": "Sample value",
+                  "time": "2018-11-12T20:20:39+00:00",
+                  "val": "y"
+                },
+                "push": {
+                  "reason": "Sample value",
+                  "time": "2018-11-12T20:20:39+00:00",
+                  "val": "y"
+                },
+                "sms": {
+                  "reason": "Sample value",
+                  "time": "2018-11-12T20:20:39+00:00",
+                  "val": "y"
+                }
+              },
+              "personalize": {
+                "content": {
+                  "val": "y"
+                }
+              },
+              "share": {
+                "val": "y"
+              }
+            }
+          }
+        },
+        "marketing": {
+          "any": {
+            "reason": "Sample value",
+            "time": "2018-11-12T20:20:39+00:00",
+            "val": "y"
+          },
+          "call": {
+            "reason": "Sample value",
+            "time": "2018-11-12T20:20:39+00:00",
+            "val": "y"
+          },
+          "commercialEmail": {
+            "reason": "Sample value",
+            "time": "2018-11-12T20:20:39+00:00",
+            "val": "y"
+          },
+          "email": {
+            "reason": "Sample value",
+            "subscriptions": {
+              "key": {
+                "subscribers": {
+                  "key": {
+                    "source": "Sample value",
+                    "time": "2018-11-12T20:20:39+00:00"
+                  }
+                },
+                "topics": [
+                  "Sample value"
+                ],
+                "type": "Sample value",
+                "val": "y"
+              }
+            },
+            "time": "2018-11-12T20:20:39+00:00",
+            "val": "y"
+          },
+          "fax": {
+            "reason": "Sample value",
+            "time": "2018-11-12T20:20:39+00:00",
+            "val": "y"
+          },
+          "postalMail": {
+            "reason": "Sample value",
+            "time": "2018-11-12T20:20:39+00:00",
+            "val": "y"
+          },
+          "preferred": "email",
+          "push": {
+            "reason": "Sample value",
+            "subscriptions": {
+              "key": {
+                "subscribers": {
+                  "key": {
+                    "source": "Sample value",
+                    "time": "2018-11-12T20:20:39+00:00"
+                  }
+                },
+                "topics": [
+                  "Sample value"
+                ],
+                "type": "Sample value",
+                "val": "y"
+              }
+            },
+            "time": "2018-11-12T20:20:39+00:00",
+            "val": "y"
+          },
+          "sms": {
+            "reason": "Sample value",
+            "subscriptions": {
+              "key": {
+                "subscribers": {
+                  "key": {
+                    "source": "Sample value",
+                    "time": "2018-11-12T20:20:39+00:00"
+                  }
+                },
+                "topics": [
+                  "Sample value"
+                ],
+                "type": "Sample value",
+                "val": "y"
+              }
+            },
+            "time": "2018-11-12T20:20:39+00:00",
+            "val": "y"
+          }
+        },
+        "metadata": {
+          "time": "2018-11-12T20:20:39+00:00"
+        },
+        "personalize": {
+          "content": {
+            "val": "y"
+          }
+        },
+        "share": {
+          "val": "y"
+        }
+      },
+      "createdByBatchID": "/uri-reference",
+      "emailFormat": "html",
+      "loyalty": {
+        "joinDate": "2018-11-12T20:20:39+00:00",
+        "loyaltyID": [
+          "Sample value"
+        ],
+        "points": 31434.97,
+        "pointsExpiration": [
+          {
+            "pointsExpirationDate": "2018-11-12T20:20:39+00:00",
+            "pointsExpiring": 533.28
+          }
+        ],
+        "pointsRedeemed": 11563.49,
+        "program": "Sample value",
+        "status": "Sample value",
+        "tier": "Sample value",
+        "upgradeDate": "Sample value"
+      },
+      "modifiedByBatchID": "/uri-reference",
+      "person": {
+        "birthDate": "2018-01-12",
+        "birthDayAndMonth": "01-23",
+        "birthYear": 1983,
+        "gender": "not_specified",
+        "maritalStatus": "not_specified",
+        "name": {
+          "courtesyTitle": "Sample value",
+          "firstName": "Sample value",
+          "fullName": "Sample value",
+          "lastName": "Sample value",
+          "middleName": "Sample value",
+          "suffix": "Sample value"
+        },
+        "nationality": "US",
+        "type": "Sample value"
+      },
+      "personID": "Sample value",
+      "preferredLanguage": "en-GB",
+      "profilePictureLink": "Sample value",
+      "repositoryCreatedBy": "Sample value",
+      "repositoryLastModifiedBy": "Sample value",
+      "timeZone": "America/Barbados",
+      "userAccount": {
+        "ID": "Sample value",
+        "accountType": "Sample value",
+        "alertStatus": false,
+        "autopayStatus": false,
+        "contactDetails": {
+          "billingAddress": {
+            "_id": "/uri-reference",
+            "_repo": {
+              "createDate": "2004-10-23T12:00:00-06:00",
+              "modifyDate": "2004-10-23T12:00:00-06:00"
+            },
+            "_schema": {
+              "description": "Sample value",
+              "elevation": 25442.03,
+              "latitude": 61.37,
+              "longitude": -5.44
+            },
+            "city": "Sample value",
+            "country": "Sample value",
+            "countryCode": "US",
+            "createdByBatchID": "/uri-reference",
+            "dmaID": 16524,
+            "label": "Sample value",
+            "lastVerifiedDate": "2018-01-12",
+            "modifiedByBatchID": "/uri-reference",
+            "msaID": 27296,
+            "postOfficeBox": "Sample value",
+            "postalCode": "Sample value",
+            "primary": false,
+            "region": "Sample value",
+            "repositoryCreatedBy": "Sample value",
+            "repositoryLastModifiedBy": "Sample value",
+            "state": "Sample value",
+            "stateProvince": "US-CA",
+            "status": "active",
+            "statusReason": "Sample value",
+            "street1": "Sample value",
+            "street2": "Sample value",
+            "street3": "Sample value",
+            "street4": "Sample value"
+          },
+          "billingAddressPhone": {
+            "countryCode": "^6$",
+            "extension": "Sample value",
+            "number": "Sample value",
+            "primary": false,
+            "status": "active",
+            "statusReason": "Sample value",
+            "validity": "consistent"
+          },
+          "faxPhone": {
+            "countryCode": "^$",
+            "extension": "Sample value",
+            "number": "Sample value",
+            "primary": false,
+            "status": "active",
+            "statusReason": "Sample value",
+            "validity": "consistent"
+          },
+          "homeAddress": {
+            "_id": "/uri-reference",
+            "_repo": {
+              "createDate": "2004-10-23T12:00:00-06:00",
+              "modifyDate": "2004-10-23T12:00:00-06:00"
+            },
+            "_schema": {
+              "description": "Sample value",
+              "elevation": 2253.25,
+              "latitude": -81.49,
+              "longitude": 2.1
+            },
+            "city": "Sample value",
+            "country": "Sample value",
+            "countryCode": "US",
+            "createdByBatchID": "/uri-reference",
+            "dmaID": 4003,
+            "label": "Sample value",
+            "lastVerifiedDate": "2018-01-12",
+            "modifiedByBatchID": "/uri-reference",
+            "msaID": 15774,
+            "postOfficeBox": "Sample value",
+            "postalCode": "Sample value",
+            "primary": false,
+            "region": "Sample value",
+            "repositoryCreatedBy": "Sample value",
+            "repositoryLastModifiedBy": "Sample value",
+            "state": "Sample value",
+            "stateProvince": "US-CA",
+            "status": "active",
+            "statusReason": "Sample value",
+            "street1": "Sample value",
+            "street2": "Sample value",
+            "street3": "Sample value",
+            "street4": "Sample value"
+          },
+          "homePhone": {
+            "countryCode": "^$",
+            "extension": "Sample value",
+            "number": "Sample value",
+            "primary": false,
+            "status": "active",
+            "statusReason": "Sample value",
+            "validity": "consistent"
+          },
+          "mailingAddress": {
+            "_id": "/uri-reference",
+            "_repo": {
+              "createDate": "2004-10-23T12:00:00-06:00",
+              "modifyDate": "2004-10-23T12:00:00-06:00"
+            },
+            "_schema": {
+              "description": "Sample value",
+              "elevation": 19585.95,
+              "latitude": 87.75,
+              "longitude": -81.03
+            },
+            "city": "Sample value",
+            "country": "Sample value",
+            "countryCode": "US",
+            "createdByBatchID": "/uri-reference",
+            "dmaID": 30814,
+            "label": "Sample value",
+            "lastVerifiedDate": "2018-01-12",
+            "modifiedByBatchID": "/uri-reference",
+            "msaID": 29555,
+            "postOfficeBox": "Sample value",
+            "postalCode": "Sample value",
+            "primary": false,
+            "region": "Sample value",
+            "repositoryCreatedBy": "Sample value",
+            "repositoryLastModifiedBy": "Sample value",
+            "state": "Sample value",
+            "stateProvince": "US-CA",
+            "status": "active",
+            "statusReason": "Sample value",
+            "street1": "Sample value",
+            "street2": "Sample value",
+            "street3": "Sample value",
+            "street4": "Sample value"
+          },
+          "mobilePhone": {
+            "countryCode": "^6$",
+            "extension": "Sample value",
+            "number": "Sample value",
+            "primary": false,
+            "status": "active",
+            "statusReason": "Sample value",
+            "validity": "consistent"
+          },
+          "personalEmail": {
+            "address": "john.smith@abc.com",
+            "label": "Sample value",
+            "primary": false,
+            "status": "active",
+            "statusReason": "Sample value",
+            "type": "unknown"
+          },
+          "shippingAddress": {
+            "_id": "/uri-reference",
+            "_repo": {
+              "createDate": "2004-10-23T12:00:00-06:00",
+              "modifyDate": "2004-10-23T12:00:00-06:00"
+            },
+            "_schema": {
+              "description": "Sample value",
+              "elevation": 22216.19,
+              "latitude": 83.26,
+              "longitude": -81.76
+            },
+            "city": "Sample value",
+            "country": "Sample value",
+            "countryCode": "US",
+            "createdByBatchID": "/uri-reference",
+            "dmaID": 27193,
+            "label": "Sample value",
+            "lastVerifiedDate": "2018-01-12",
+            "modifiedByBatchID": "/uri-reference",
+            "msaID": 2945,
+            "postOfficeBox": "Sample value",
+            "postalCode": "Sample value",
+            "primary": false,
+            "region": "Sample value",
+            "repositoryCreatedBy": "Sample value",
+            "repositoryLastModifiedBy": "Sample value",
+            "state": "Sample value",
+            "stateProvince": "US-CA",
+            "status": "active",
+            "statusReason": "Sample value",
+            "street1": "Sample value",
+            "street2": "Sample value",
+            "street3": "Sample value",
+            "street4": "Sample value"
+          },
+          "shippingAddressPhone": {
+            "countryCode": "^59$",
+            "extension": "Sample value",
+            "number": "Sample value",
+            "primary": false,
+            "status": "active",
+            "statusReason": "Sample value",
+            "validity": "consistent"
+          }
+        },
+        "productPreferences": [
+          "Sample value"
+        ],
+        "startDate": "2018-11-12T20:20:39+00:00",
+        "status": "active"
+      }
+    }
+  }
+}

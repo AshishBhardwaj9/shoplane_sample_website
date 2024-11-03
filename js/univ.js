@@ -1,11 +1,24 @@
-let credEmail = sessionStorage.getItem("credEmail") || '';
+let credEmail = localStorage.getItem("credEmail");
 let txnId = sessionStorage.getItem("txnId");
+window.adobeDataLayer = window.adobeDataLayer || [];
 
-let pageInfo = {
-  pageName: "home",
-};
-
-let credData = {
-  credentials: { email: credEmail },
-  txnId,
-};
+function adlPushEvent(payload){
+  // console.log("Payload : "+payload.event)
+  var eventInfo=payload.event;
+  if (
+    credEmail != null && credEmail.length > 0
+  ) {
+    window.adobeDataLayer.push({
+      ...payload,
+      eventInfo,
+      login_status: 1,
+      email:credEmail,
+    });
+  } else {
+    window.adobeDataLayer.push({
+      ...payload,
+      eventInfo,
+      login_status: 0
+    });
+  }
+}

@@ -1,5 +1,5 @@
 console.clear()
-
+var productList=[]
 let id = location.search.split('?')[1]
 console.log(id)
 
@@ -8,6 +8,53 @@ if(document.cookie.indexOf(',counter=')>=0)
     let counter = document.cookie.split(',')[1].split('=')[1]
     document.getElementById("badge").innerHTML = counter
 }
+
+function dynamicCartSection(ob, itemCounter) {
+    productList.push({
+      product_name: ob.name,
+      product_brand: ob.brand,
+      product_price: ob.price,
+      product_qty: itemCounter
+    })
+ }
+
+function updateCartInfo() {
+    fetch("./js/items.json")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+        res.text().then((data) => {
+          contentTitle = JSON.parse(data);
+  
+          let counter = Number(localStorage.getItem('counter') != null ? localStorage.getItem('counter') : 0);
+  
+          let item = localStorage.getItem('orderId').split(" ");
+  
+          let i;
+          let totalAmount = 0;
+          for (i = 0; i < counter; i++) {
+            let itemCounter = 1;
+            for (let j = i + 1; j < counter; j++) {
+              if (Number(item[j]) == Number(item[i])) {
+                itemCounter += 1;
+              }
+            }
+            totalAmount += Number(contentTitle[item[i] - 1].price) * itemCounter;
+            dynamicCartSection(contentTitle[item[i] - 1], itemCounter);
+            i += itemCounter - 1;
+          }
+          
+          adlPushEvent({
+            event: "updated_cart",
+            pageName: "Content_Details_Page",
+            productList,
+            totalAmount
+          })
+        });
+      })
+      .catch((error) => console.error("Unable to fetch data:", error));
+  }
 
 function dynamicContentDetails(ob)
 {
@@ -33,10 +80,12 @@ function dynamicContentDetails(ob)
     let h1 = document.createElement('h1')
     let h1Text = document.createTextNode(ob.name)
     h1.appendChild(h1Text)
+    h1.classList.add('productName')
 
     let h4 = document.createElement('h4')
     let h4Text = document.createTextNode(ob.brand)
     h4.appendChild(h4Text)
+    h4.classList.add('brandName')
     console.log(h4);
 
     let detailsDiv = document.createElement('div')
@@ -61,6 +110,14 @@ function dynamicContentDetails(ob)
     let h3ProductPreviewText = document.createTextNode('Product Preview')
     h3ProductPreviewDiv.appendChild(h3ProductPreviewText)
     productPreviewDiv.appendChild(h3ProductPreviewDiv)
+
+    adlPushEvent({
+        event: "pageLoad",
+        pageName: "Content_Details_Page",
+        product_name:ob.name,
+        product_brand:ob.brand,
+        product_price:ob.price
+      })
 
     let i;
     for(i=0; i<ob.photos.length; i++)
@@ -89,14 +146,35 @@ function dynamicContentDetails(ob)
     {
         let order = id+" "
         let counter = 1
+        /*
         if(document.cookie.indexOf(',counter=')>=0)
         {
-            order = id + " " + document.cookie.split(',')[0].split('=')[1]
+            console.log('counter>0')
+            order = id + " " + document.cookie.split(',counter')[0].split('=')[1]
             counter = Number(document.cookie.split(',')[1].split('=')[1]) + 1
         }
         document.cookie = "orderId=" + order + ",counter=" + counter
-        document.getElementById("badge").innerHTML = counter
         console.log(document.cookie)
+        */
+        if (localStorage.getItem('counter')!=null && localStorage.getItem('counter').length>0)
+        {
+            console.log('counter>0')
+            order = id + " " + localStorage.getItem('orderId')
+            counter = Number(localStorage.getItem('counter')) + 1
+        }
+        localStorage.setItem('counter',counter)
+        localStorage.setItem('orderId',order)
+        // document.cookie = "orderId=" + order + ",counter=" + counter
+        document.getElementById("badge").innerHTML = counter
+
+        adlPushEvent({
+        event: "add_to_cart",
+        pageName: "Content_Details_Page",
+        product_name:ob.name,
+        product_brand:ob.brand,
+        product_price:ob.price
+      })
+      updateCartInfo();
     }
     buttonTag.appendChild(buttonText)
 
@@ -118,6 +196,7 @@ function dynamicContentDetails(ob)
 
     return mainContainer
 }
+
 
 
 
