@@ -12,7 +12,9 @@ function adlPushEvent(payload){
       ...payload,
       eventInfo,
       login_status: 1,
-      email:credEmail,
+      userInfo:{
+        email:credEmail
+      }
     });
   } else {
     window.adobeDataLayer.push({

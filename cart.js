@@ -96,7 +96,7 @@ buttonTag.onclick = function () {
     localStorage.removeItem('orderId')
     localStorage.removeItem('counter')
     console.log("clicked");
-    window.location.href='/orderPlaced.html?'
+    window.location.href='orderPlaced.html?'
   }
 };
 //dynamicCartSection()

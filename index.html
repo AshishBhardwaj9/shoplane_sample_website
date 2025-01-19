@@ -1,113 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- <link rel="stylesheet" href="/style.css"> -->
-    <title>E-COMMERCE WEBSITE</title>
-    <!-- favicon -->
-    <link
-      rel="icon"
-      href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo"
-      type="image/gif"
-      sizes="16x16"
-    />
-    <!-- header links -->
-    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
-      rel="stylesheet"
-    />
-    <!-- slider links -->
-    <!-- <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
-    <script src="js/jQuery3.4.1.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
-    />
-    <script
-      src="https://assets.adobedtm.com/236ca7d75265/86f54a7bc8cb/launch-87f5dedd0f2a-development.min.js"
-      async
-    ></script>
-    <script src="./js/univ.js" ></script>
-    <script>
-      adlPushEvent({
-          event: "pageLoad",
-          pageName: "Home_Page"
-        });
-    </script>
-  </head>
 
-  <body>
-    <!-- HEADER -->
-    <div id="1"></div>
-    <script>
-      load("header.html");
-      function load(url) {
-        req = new XMLHttpRequest();
-        req.open("GET", url, false);
-        req.send(null);
-        document.getElementById(1).innerHTML = req.responseText;
-      }
-    </script>
-    <!-- SLIDER -->
-    <div id="2"></div>
-    <script>
-      load("slider.html");
-      function load(url) {
-        req = new XMLHttpRequest();
-        req.open("GET", url, false);
-        req.send(null);
-        document.getElementById(2).innerHTML = req.responseText;
-      }
-    </script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Profile </title>
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/style_drive.css">
+  <!-- favicon -->
+  <link rel="icon"
+    href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo"
+    type="image/gif" sizes="16x16">
+  <!-- header links -->
+  <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <style>
+    .formDisp {
+      display: block;
+    }
 
-    <!-- CONTENT SECTION -->
-    <div id="3"></div>
-    <script>
-      load("content.html");
-      function load(url) {
-        req = new XMLHttpRequest();
-        req.open("GET", url, false);
-        req.send(null);
-        document.getElementById(3).innerHTML = req.responseText;
-      }
-    </script>
+    .formHide {
+      display: none;
+    }
 
-    <!-- FOOTER -->
-    <div id="4"></div>
-    <script>
-      load("footer.html");
-      function load(url) {
-        req = new XMLHttpRequest();
-        req.open("GET", url, false);
-        req.send(null);
-        document.getElementById(4).innerHTML = req.responseText;
-      }
-    </script>
-  </body>
+    body {
+      font-family: 'Lato', sans-serif;
+      /* Consistent font across the page */
+      background-color: #f7f7f7;
+      /* Light background for contrast */
+      margin: 0;
+      padding: 20px;
+      /* Add some space around the content */
+    }
 
-  <!-- slider JS START -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    .driveFormContainer {
+      width: 100%;
+      max-width: 400px;
+      /* Set a maximum width */
+      margin: auto;
+      /* Center the form */
+      padding: 30px;
+      /* Increased padding */
+      border: 1px solid #e0e0e0;
+      /* Soft border */
+      border-radius: 10px;
+      /* Slightly more rounded corners */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      /* Enhanced shadow */
+      background-color: #ffffff;
+      /* White background */
+    }
+
+    .driveFormContainer h3 {
+      text-align: center;
+      /* Center the heading */
+      margin-bottom: 20px;
+      /* Space below heading */
+      color: #333;
+      /* Darker text for contrast */
+      font-size: 1.5em;
+      /* Slightly larger font */
+    }
+
+    .form-control {
+      width: 90%;
+      /* Full width */
+      padding: 12px;
+      /* Ample padding */
+      margin: 5px 0;
+      /* Space between inputs */
+      border: 1px solid #ccc;
+      /* Standard border */
+      border-radius: 5px;
+      /* Rounded corners */
+      font-size: 1em;
+      /* Consistent font size */
+      transition: border-color 0.3s;
+      /* Smooth transition for focus */
+    }
+
+    .form-control:focus {
+      border-color: #007bff;
+      /* Blue border on focus */
+      outline: none;
+      /* Remove default outline */
+    }
+
+    .submit {
+      background-color: #007bff;
+      /* Primary button color */
+      color: #ffffff;
+      /* White text */
+      text-align: center;
+      /* Center text */
+      padding: 12px;
+      /* Consistent padding */
+      margin: 20px 0;
+      /* Space around the button */
+      border-radius: 5px;
+      /* Rounded corners */
+      cursor: pointer;
+      /* Pointer cursor */
+      font-size: 1em;
+      /* Consistent font size */
+      transition: background-color 0.3s;
+      /* Smooth transition */
+    }
+
+    .submit:hover {
+      background-color: #0056b3;
+      /* Darker shade on hover */
+    }
+  </style>
+
+<script src="https://assets.adobedtm.com/666644a00be2/ee48be99575c/launch-15a72df8bb65-development.min.js"></script>
+  <script src="./js/univ.js"></script>
+  <script src="./js/credStream.js"></script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <div id="1">
+
+  </div>
   <script>
-    $(document).ready(function () {
-      $("#containerSlider").slick({
-        dots: true,
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 1500,
-      });
-    });
+    load("header.html");
+    function load(url) {
+      req = new XMLHttpRequest();
+      req.open("GET", url, false);
+      req.send(null);
+      document.getElementById(1).innerHTML = req.responseText;
+    }
   </script>
-  <!-- slider JS ENDS -->
 
-  <!-- content JS -->
-  <script src="content.js"></script>
+  <!-- CART CONTAINER -->
+  <div id="cartMainContainer">
+    <div>
+      <ul class="list">
+        <li>
+          <div class="driveFormContainer">
+            <form id="SignUpForm" class="formDisp">
+              <h3>Register</h3>
+              <select class="title_a required form-control" name="salutation" id="salutation" style="width:95%">
+                <option value="Mr." selected="selected">Mr.</option>
+                <option value="Ms.">Ms.</option>
+              </select>
+
+              <div class="first_name">
+                <!-- First Name*<br> -->
+                <input type="text" name="firstname" placeholder="First Name" id="firstname"
+                  class="required form-control textonly" />
+              </div>
+              <div class="last_name">
+                <!--Last Name*<br>-->
+                <input type="text" name="lastname" placeholder="Last Name" id="lastname"
+                  class="required form-control textonly" />
+              </div>
+              <input type="email" placeholder="Email" required class="box form-control" id="reg_email" />
+              <input type="password" placeholder="Password" required class="box form-control" id="reg_password" />
+              <input type="number" placeholder="mobile" id="mobile" value="" class="form-control" />
+              <input type="text" placeholder="India" id="country" class="form-control" value="India" disabled />
+              <input type="text" placeholder="YYYY-MM-DD" id="dob" class="form-control" value="" />
+              <select name="gender" id="gender" class="title_name required form-control" style="width:95%">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="non_specific" selected>Trans</option>
+              </select>
+              <select name="cityid" id="cityid" class="title_name required form-control" style="width:95%">
+                <option value="Chennai">Chennai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Kolkata" selected>Kolkata</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Bengaluru">Bengaluru</option>
+              </select>
+              <!-- <button class="btn" onclick="setSession();">Submit</button> -->
+              <p style="display:flex;justify-content: center; margin-top: 5px; margin-bottom: 15px;"
+                onclick="switchCred(SignUpForm,SignInForm)">Already having account? Signin</p>
+              <div class="submit" onclick="signup()">Signup</div>
+            </form>
+            <form id="SignInForm" class="formHide">
+              <h3>Login</h3>
+              <input type="email" class="form-control" placeholder="Email" required class="box" id="login_email"
+                style="width:95%" />
+              <input type="password" class="form-control" placeholder="Password" required class="box" id="login_password"
+                style="width:95%" />
+              <!-- <button class="btn" onclick="setSession();">Submit</button> -->
+              <p style="display:flex;justify-content: center; margin-top: 5px; margin-bottom: 15px;"
+                onclick="switchCred(SignInForm,SignUpForm)">Not having account? SignUp</p>
+              <div class="submit" onclick="login()">Login</div>
+            </form>
+            <form id="InfoForm" class="formHide">
+              <h3 id="greet"></h3>
+              <div class="submit" onclick="logout()">LogOut</div>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <div id="4"></div>
+<script>
+  load("footer.html");
+  function load(url) {
+    req = new XMLHttpRequest()
+    req.open("GET", url, false);
+    req.send(null);
+    document.getElementById(4).innerHTML = req.responseText;
+  }
+  </script>
+</body>
+<script src="./credential.js" async></script>
+<script>
+  let credData={
+    credentials:{}
+  };
+  adlPushEvent({
+    event:"pageLoad",
+    pageName: 'Credential_Page'
+  });
+</script>
+<!-- FOOTER -->
+<script>
+  var ecid=_satellite.getVar('ECID');
+  function logout() {
+    adlPushEvent({
+      event: 'logout',
+      pageName: 'Credential_Page'
+    });
+    setTimeout(()=>{
+      localStorage.clear();
+      window.location.reload()
+    },1000)
+    
+  }
+  if (localStorage.getItem('credEmail')!=null && localStorage.getItem('credEmail').length > -1) {
+    document.getElementById('greet').innerHTML = 'Hi ' + localStorage.getItem('credEmail') + '.';
+    SignUpForm.classList.remove('formDisp');
+    SignUpForm.classList.add('formHide');
+    SignInForm.classList.remove('formDisp');
+    SignInForm.classList.add('formHide');
+    InfoForm.classList.remove('formHide');
+    InfoForm.classList.add('formDisp');
+  }
+  function switchCred(curr, next) {
+
+    if (next.getAttribute('id') == 'SignInForm') {
+      txnId = "L" + Math.round((Math.random()) * 10000000);
+      credData.txnId = txnId
+    }
+    else {
+      txnId = "R" + Math.round((Math.random()) * 10000000);
+      credData.txnId = txnId
+    }
+
+    curr.classList.remove('formDisp');
+    curr.classList.add('formHide');
+
+    next.classList.remove('formHide');
+    next.classList.add('formDisp');
+
+  }
+  async function signup() {
+    let txnId = "R" + Math.round((Math.random()) * 10000000);
+    let salutation = document.getElementById('salutation').value;
+    let email = document.getElementById('reg_email').value;
+    let password = document.getElementById('reg_password').value;
+    let fname = document.getElementById('firstname').value;
+    let lname = document.getElementById('lastname').value;
+    let mobile = document.getElementById('mobile').value;
+    let country = document.getElementById('country').value;
+    let city = document.getElementById('cityid').value;
+    let state = city == 'Kolkata' ? 'WB' : (city == 'Chennai' ? 'TN' : (city == 'Mumbai' ? 'MH' : (city == 'Delhi' ? 'DL' : ('KA'))))
+    let dob= document.getElementById('dob').value;
+    let gender=document.getElementById('gender').value;
+
+    credData.credentials = { email, salutation, fname, lname, mobile, city, country, state , dob, gender, ecid};
+    credData.txnId = txnId;
+
+    adlPushEvent({
+      event: 'signup',
+      pageName: 'Credential_Page',
+      userInfo:credData.credentials
+    });
+
+    localStorage.setItem('credEmail', email)
+    localStorage.setItem('txnId', txnId);
+
+    regStream({ "city": city, "country": country, "cusType": "Lead", "email": email, "firstName": fname, "lastName": lname, "phone": mobile, "passwordEnc": password, "salutation": salutation, "state": state, dob, gender, ecid }).then(()=>{
+    window.location.href = 'index.html';
+    })
+  }
+  async function login(){
+    let email = document.getElementById('login_email').value;
+    let password = document.getElementById('login_password').value;
+    credData.credentials = { email, password};
+    localStorage.setItem('credEmail', email)
+
+    adlPushEvent({
+      event: 'login',
+      pageName: 'Credential_Page',
+      userInfo:credData.credentials
+    });
+    window.location.href = 'index.html';
+  }
+</script>
+
 </html>
