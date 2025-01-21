@@ -234,7 +234,7 @@ async function regStream(data) {
   //   xhttp.setRequestHeader("Content-type", "application/json");
   //   xhttp.send(JSON.stringify(json));
   let res = await fetch(
-    ${{url}},
+    "https://dcs.adobedc.net/collection/33e7fe2d7d3e38cdd14a6b6384463ab5e3d70b0287c2f6b3ef301b0a84defd34?syncValidation=false",
     {
       method: "POST",
       headers: {
